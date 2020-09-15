@@ -23,6 +23,8 @@ import Button from "components/CustomButtons/Button";
 
 import styles from "../../assets/jss/material-dashboard-pro-react/components/authNavbarStyle.js";
 import labels from "../../variables/labels";
+import Icon from "@material-ui/core/Icon";
+import InputAdornment from "@material-ui/core/InputAdornment";
 
 const useStyles = makeStyles(styles);
 
@@ -43,6 +45,21 @@ export default function AuthNavbar(props) {
     const list = (
         <List className={classes.list}>
             <ListItem className={classes.listItem}>
+                <NavLink
+                    to={"/workspace/patients"}
+                    className={cx(classes.navLink, {
+                        [classes.navLinkActive]: activeRoute("/workspace/patients")
+                    })}
+                >
+                    <ListItemText
+                        primary={"Защищенная"}
+                        disableTypography={true}
+                        className={classes.listItemText}
+                    />
+                </NavLink>
+            </ListItem>
+            <ListItem className={classes.listItem}>
+
                 <NavLink
                     to={"/auth/register-page"}
                     className={cx(classes.navLink, {
